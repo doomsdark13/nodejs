@@ -19,7 +19,8 @@ let request = https.request(opt,(response) => {
 		body = body + data
 	})
 	response.on('end', () => {
-		console.log(body)
+		let profile = JSON.parse(body)
+		console.log(profile.avatar_url)
 	})
 })
 
